@@ -46,7 +46,7 @@ document.querySelectorAll('a[href="#book"]').forEach(button => {
     const templateParams = {
       name: formData.get('name'),
       email: formData.get('email'),
-      subject: formData.get('subject'),
+      phone: formData.get('phone'),
       message: formData.get('message'),
     }
 
