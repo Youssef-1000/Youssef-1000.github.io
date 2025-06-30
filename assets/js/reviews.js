@@ -59,39 +59,57 @@ const reviews = [
 
 
 function renderReviews() {
+  const starIcon = `<img src=\"assets/icons/star.svg\" alt=\"star\" class=\"h-4 w-4\" />`
 
-  const starIcon = `<img src="assets/icons/star.svg" alt="star" class="h-4 w-4" />`
-
-  const slidesContainer = document.querySelector('#reviews-carousel .glide__slides')
-  slidesContainer.innerHTML = reviews.map(r => `
-  <li class="glide__slide">
-    <div class="flex-1 min-w-0 bg-neutral-50 rounded-2xl p-6 flex flex-col gap-3 items-start" data-aos="fade-up">
-    <div class="flex items-center gap-3 mb-2">
-      <div class="bg-neutral-100 text-neutral-700 font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">${r.initials}</div>
-      <div>
-        <div class="font-semibold text-neutral-900 leading-tight">${r.name}</div>
-        <div class="text-xs text-gray-500">${r.type} • ${r.date}</div>
+  const emblaContainer = document.querySelector('#reviews-carousel .embla__container')
+  const reviewsHtml = reviews.map(r => `
+    <div class="embla__slide w-1/4 lg:w-1/4 md:w-1/2 sm:w-full px-4 box-border select-none touch-pan-x">
+      <div class="flex-1 min-w-0 bg-neutral-50 rounded-2xl p-6 flex flex-col gap-3 items-start data-aos=fade-up h-auto">
+        <div class="flex items-center gap-3 mb-2\">
+          <div class="bg-neutral-100 text-neutral-700 font-bold rounded-full w-10 h-10 flex items-center justify-center text-lg">${r.initials}</div>
+          <div>
+            <div class="font-semibold text-neutral-900 leading-tight">${r.name}</div>
+            <div class="text-xs text-gray-500">${r.type} • ${r.date}</div>
+          </div>
+        </div>
+        <div class="flex gap-1">${starIcon.repeat(r.rating)}</div>
+        <p class="leading-relaxed tracking-wide text-sm text-neutral-800">${r.content}</p>
       </div>
     </div>
-    <div class="flex gap-1">${starIcon.repeat(r.rating)}</div>
-    <p class="leading-relaxed tracking-wide text-sm text-neutral-800 line-clamp-5 overflow-hidden">
-      ${r.content}
-    </p>
-    </div>
-  </li>
+  `).join('')
+  emblaContainer.className = 'embla__container flex select-none touch-pan-x';
+  emblaContainer.innerHTML = reviewsHtml
+
+  let indicators = document.querySelector('#reviews-carousel .embla__dots')
+  if (!indicators) {
+    indicators = document.createElement('div')
+    indicators.className = 'embla__dots flex justify-center gap-2 mt-4'
+    document.querySelector('#reviews-carousel').appendChild(indicators)
+  }
+  indicators.innerHTML = reviews.map((_, i) => `
+    <button type=\"button\" aria-label=\"Go to slide ${i + 1}\" class=\"embla__dot w-3 h-3 rounded-full bg-gray-300 transition-colors\"></button>
   `).join('')
 
-  const glide = new Glide('#reviews-carousel', {
-    type: 'carousel',
-    perView: 4,
-    focusAt: 'center',
-    gap: 24,
-    breakpoints: {
-        1024: { perView: 2 },
-        640: { perView: 1 }
-    }
+  const emblaNode = document.querySelector('#reviews-carousel')
+  const options = {
+    loop: true,
+    align: 'center',
+    slidesToScroll: 1,
+  }
+  const plugins = [EmblaCarouselAutoplay({ delay: 3500, stopOnInteraction: false })]
+  const embla = EmblaCarousel(emblaNode, options, plugins)
+
+  function updateDots() {
+    const selected = embla.selectedScrollSnap()
+    indicators.querySelectorAll('.embla__dot').forEach((dot, i) => {
+      dot.classList.toggle('bg-orange-500', i === selected)
+      dot.classList.toggle('bg-gray-300', i !== selected)
+    })
+  }
+  embla.on('select', updateDots)
+  updateDots()
+
+  indicators.querySelectorAll('.embla__dot').forEach((dot, i) => {
+    dot.addEventListener('click', () => embla.scrollTo(i))
   })
-
-  glide.mount()
-
 }

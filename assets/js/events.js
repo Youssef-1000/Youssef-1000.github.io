@@ -1,6 +1,6 @@
 function setupEvents() {
 
-document.querySelectorAll('a[href="#book"]').forEach(button => {
+  document.querySelectorAll('a[href="#book"]').forEach(button => {
     button.addEventListener('click', () => {
       gtag('event', 'book_click', {
         event_category: 'engagement',

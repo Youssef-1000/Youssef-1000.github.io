@@ -31,9 +31,6 @@
     <link rel="stylesheet" href="assets/css/aos.css" />
     <script type="text/javascript" src="assets/js/aos.js"></script>
 
-    <link rel="stylesheet" href="assets/css/glide.core.min.css" />
-    <script type="text/javascript" src="assets/js/glide.min.js"></script>
-
     <link rel="preconnect" href="https://www.google.com">
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin>
 
@@ -56,6 +53,8 @@
     <script src="assets/js/reviews.js"></script>
     <script src="assets/js/events.js"></script>
     <script src="assets/js/mobile.js"></script>
+    <script src="assets/js/embla-carousel.umd.js"></script>
+    <script src="assets/js/embla-carousel-autoplay.umd.js"></script>
 
     <script type="application/ld+json">
     {
@@ -63,18 +62,22 @@
       "@type": "LocalBusiness",
       "name": "Youssef Maths Tutoring",
       "url": "https://youssefmaths.com/",
-      "description": "Private GCSE & A-Level maths tutoring from a UK university graduate. Lessons online or in-person. Contact to book.",
+      "description": "Private GCSE & KS3 maths tutoring from a UK university graduate. Lessons online. Contact to book. Call Me On +44 7356 240050 or WhatsApp: https://wa.me/message/PTD2YEPYY73KB1",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "London",
         "addressCountry": "GB"
       },
+      "telephone": "+447356240050",
       "image": "https://youssefmaths.com/assets/images/og-card.jpg",
       "priceRange": "££",
       "areaServed": {
         "@type": "Place",
         "name": "United Kingdom"
       },
+      "sameAs": [
+        "https://wa.me/message/PTD2YEPYY73KB1"
+      ],
       "breadcrumbs": {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -188,11 +191,11 @@
       <section id="hero" class="w-full px-6 sm:px-12 md:px-16 lg:px-20 sm:py-4 md:py-8 lg:py-12 flex flex-col-reverse lg:flex-row items-center justify-between gap-8 mt-8 mb-16 lg:my-0 scroll-my-20">
         <div data-aos="fade-down" class="w-full lg:w-1/2 text-center lg:text-left">
           <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
-            <span class="text-orange-500">GCSE Maths</span> Support That <span class="text-orange-500">Builds</span> Confidence and <span class="text-orange-500">Raises</span> Grades
+            <span class="text-orange-500">GCSE and KS3 Maths</span> Support That Builds <span class="text-orange-500">Confidence</span> and Raises <span class="text-orange-500">Grades</span>
           </h1>
 
           <p class="mt-6 text-base sm:text-lg text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Unlock your potential with expert, friendly online maths tuition. 100+ lessons completed across the UK. GCSE students consistently achieve their best grades. Trusted by students, parents, and schools
+            Unlock your potential with expert, friendly online maths tuition. 100+ lessons completed across the UK. GCSE and KS3 students consistently achieve their best grades. Trusted by students, parents, and schools
           </p>
 
           <div class="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
@@ -276,10 +279,8 @@
         <p data-aos="fade-down" class="text-base lg:text-lg text-neutral-700 text-center max-w-2xl mb-8">
           Hear from parents and students who have worked with me. Real feedback, real results
         </p>
-        <div id="reviews-carousel" class="glide w-full max-w-6xl">
-          <div class="glide__track" data-glide-el="track">
-            <ul class="glide__slides"></ul>
-          </div>
+        <div id="reviews-carousel" class="embla w-full max-w-6xl">
+          <div class="embla__container"></div>
         </div>  
       </section>
 
@@ -290,6 +291,25 @@
         <p data-aos="fade-down" class="text-base lg:text-lg text-neutral-700 text-center max-w-2xl mb-8">
           Ready to start your maths journey? Get in touch to discuss your goals, book a session, or ask any questions. I'm here to help you succeed!
         </p>
+
+        <div data-aos="fade-down" class="flex flex-col items-center gap-2 mb-4">
+          <p class="text-base text-neutral-700 text-center">
+            Prefer email or phone? Reach me at 
+            <a href="mailto:youssef@youssefmaths.com" class="text-orange-500 hover:text-orange-600 transition-colors">youssef@youssefmaths.com</a>
+            <br>
+            or call <a href="tel:+447356240050" class="text-orange-500 hover:text-orange-600 transition-colors">+44 7356 240050</a>
+          </p>
+          <a 
+            href="https://wa.me/447356240050" 
+            target="_blank" 
+            rel="noopener" 
+            class="inline-flex items-center gap-2 mt-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-lg shadow transition-colors"
+            aria-label="Chat on WhatsApp"
+          >
+            <img src="assets/icons/whatsapp.svg" alt="WhatsApp" class="h-5 w-5" loading="lazy" />
+            Message on WhatsApp
+          </a>
+        </div>
 
         <div class="flex flex-col lg:flex-row p-2 bg-orange-50 rounded-3xl w-full">
           
@@ -314,20 +334,20 @@
             <div class="flex flex-col lg:flex-row gap-4">
               <div class="flex-1 flex flex-col gap-2">
                 <label for="name" class="text-sm font-medium text-neutral-400 tracking-tighter">Name</label>
-                <input type="text" id="name" name="name" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="Your Name" />
+                <input autocomplete="name" type="text" id="name" name="name" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="Your Name" />
               </div>
               <div class="flex-1 flex flex-col gap-2">
                 <label for="phone" class="text-sm font-medium text-neutral-400 tracking-tighter">Phone</label>
-                <input type="tel" id="phone" name="phone" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="Your Number" />
+                <input autocomplete="tel" type="tel" id="phone" name="phone" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="Your Number" />
               </div>
             </div>
             <div class="flex-1 flex flex-col gap-2">
               <label for="email" class="text-sm font-medium text-neutral-400 tracking-tighter">Email</label>
-              <input type="email" id="email" name="email" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="you@email.com" />
+              <input autocomplete="email" type="email" id="email" name="email" required class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0" placeholder="you@email.com" />
             </div>
             <div class="flex flex-col gap-2">
               <label for="message" class="text-sm font-medium text-neutral-400 tracking-tighter">Message</label>
-              <textarea id="message" name="message" rows="4" lg:rows="5" class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0 resize-none"placeholder="Tell me about your goals, topics, or questions..."></textarea>
+              <textarea autocomplete="off" id="message" name="message" rows="4" lg:rows="5" class="border-b border-gray-200 ps-1 pe-4 py-2 focus:outline-none focus:ring-0 resize-none"></textarea>
             </div>
             <button type="submit" class=" bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 lg:px-8 rounded-xl shadow transition self-start w-full lg:w-auto disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-not-allowed">Send Message</button>
           </form>
