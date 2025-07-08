@@ -96,7 +96,7 @@ function renderReviews() {
     align: 'center',
     slidesToScroll: 1,
   }
-  const plugins = [EmblaCarouselAutoplay({ delay: 3500, stopOnInteraction: false })]
+  const plugins = []
   const embla = EmblaCarousel(emblaNode, options, plugins)
 
   function updateDots() {
