@@ -54,7 +54,7 @@ const reviews = [
     date: '21 Feb',
     content: `Great tutor really helpful really polite and engages with you throughout the whole lesson I fully recommended him as your maths tutor !`,
     rating: 5
-  }
+  },
 ]
 
 
