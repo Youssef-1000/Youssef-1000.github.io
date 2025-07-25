@@ -1,0 +1,1 @@
+exclude: ["package.json", "package-lock.json", "pnpm-lock.yaml", "postcss.config.mjs"]
