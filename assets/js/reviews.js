@@ -1,4 +1,25 @@
 const reviews = [
+        {
+    initials: 'JY',
+    name: 'Jessica',
+    type: 'Parent from Nottingham',
+    date: '23 Jul',
+    content: `I am really happy to have Youssef to help my son on Maths. My son always says Youssef could make him truly understand some difficult concepts so he is happy to have the lessons even during the holidays. Thank you Youssef helps my son to build up a concrete foundation on his learning path.`,
+    rating: 5
+  },
+      {
+    initials: 'BM',
+    name: 'Beth',
+    type: 'Parent from Birmingham',
+    date: '23 Jul',
+    content: `My daughter who is going in to yr 9 has just had her first lesson with Youssef. She has SEN and the secondary school environment can be overwhelming for her, which has led her to fall behind in some areas.
+Youssef responded to my enquiry quickly, he was confident he could help my daughter and he had a positive outlook.
+We discussed some known areas of difficulty and then I left them to the lesson.
+Youssef was quick to put my daughter at ease and she liked his approach. I was impressed with the resources available on the platform and she interacted and engaged in the lesson better than I was expecting.
+After the lesson I received a report via eail about what had been covered, areas that went well and areas to focus on during future lessons.
+We have arranged a regular slot and we're hopeful this will help build her confidence and ability.`,
+    rating: 5
+  },
       {
     initials: 'RS',
     name: 'Rebecca',
