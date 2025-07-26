@@ -1,5 +1,13 @@
 const reviews = [
   {
+    initials: 'AM',
+    name: 'Aneta',
+    type: 'Parent from Valencia',
+    date: '10 Jul',
+    content: `Youssef is a super patient tutor that explains difficult topics in a easy to understand way. We can see great improvement that reflected in our son’s final exam of Y8. We just wish we had started earlier with his tutoring :)`,
+    rating: 5
+  }
+  {
     initials: 'KA',
     name: 'Kirsty',
     type: 'Parent from Swindon',
