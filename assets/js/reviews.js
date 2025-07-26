@@ -15,7 +15,7 @@ const reviews = [
     content: `We’re incredibly grateful to Youssef for the fantastic support he’s given our son in maths. Thanks to his clear, engaging teaching and encouragement, our son achieved the highest score in his set across the year group.
 
 Youssef’s patient and tailored approach helped build both confidence and a deeper understanding of the subject. We couldn’t recommend him more highly — an excellent tutor and a real professional.`,
-    rating: 0
+    rating: 5
   },
   {
     initials: 'AM',
