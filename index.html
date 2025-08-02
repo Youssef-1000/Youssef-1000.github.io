@@ -44,19 +44,6 @@
     <link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
 
-    <script type="text/javascript">
-      (function(){
-          emailjs.init({
-            publicKey: "BlpRjcNzt8IK4lDoN",
-            blockHeadless: true,
-            limitRate: {
-              id: 'app',
-              throttle: 10000
-            }
-          })
-      })()
-    </script>
-
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -422,6 +409,21 @@
   <script type="text/javascript"
     src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
   </script>
+
+
+  <script type="text/javascript">
+    (function(){
+        emailjs.init({
+          publicKey: "BlpRjcNzt8IK4lDoN",
+          blockHeadless: true,
+          limitRate: {
+            id: 'app',
+            throttle: 10000
+          }
+        })
+    })()
+  </script>
+
 
   <script src="/assets/js/jquery-3.7.1.min.js"></script>
   <script src="/assets/js/owl.carousel.min.js"></script>
